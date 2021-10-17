@@ -204,7 +204,7 @@ public class AdvantageDemoMembership {
 	public void user_just_click_on_sign_in() throws Throwable {
 		AdvantageDemoPOM CreateAccount = new AdvantageDemoPOM(driver); //Object Created to get Web Elements from Page Object Model
 		CreateAccount.SignIn().click(); // To click on the Sign In button
-		WebDriverWait wait = new WebDriverWait(driver,40); // Explicit wait is a soft wait to fix synchronizing issue.
+		Thread.sleep(4000); // Wait to see the result
 	}
 
 	@And("^User will just click on username and my account option$")

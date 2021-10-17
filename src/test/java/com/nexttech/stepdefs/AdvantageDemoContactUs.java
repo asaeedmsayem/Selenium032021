@@ -29,14 +29,13 @@ public class AdvantageDemoContactUs {
 					e.printStackTrace(); //It helps to trace the exception as I said at the beginning.
 					System.out.println("Check your Browser's Driver Update");
 				}
-				Thread.sleep(5000);
 	}
 
 	@When("^User click on contact us button$")
 	public void user_click_on_contact_us_button() throws Throwable {
 		AdvantageDemoPOM ContactUsForm = new AdvantageDemoPOM(driver); //Object Created to get Web Elements from Page Object Model
 		ContactUsForm.ContactUs().click(); //Click on the contact us button
-		WebDriverWait wait = new WebDriverWait(driver,20); // Explicit wait is a soft wait to fix synchronizing issue.
+		Thread.sleep(4000); // Wait to see the result
 	}
 
 	@When("^User will select product category$")
@@ -66,7 +65,8 @@ public class AdvantageDemoContactUs {
 	public void user_type_message(String arg1) throws Throwable {
 		AdvantageDemoPOM ContactUsForm = new AdvantageDemoPOM(driver); //Object Created to get Web Elements from Page Object Model
 		ContactUsForm.ContactUsSubject().sendKeys(arg1); //Typing message subject into the text box
-		WebDriverWait wait = new WebDriverWait(driver,20); // Explicit wait is a soft wait to fix synchronizing issue.
+		//WebDriverWait wait = new WebDriverWait(driver,20); // Explicit wait is a soft wait to fix synchronizing issue.
+		Thread.sleep(4000); // Wait to see the result
 	}
 
 	@Then("^User click on send button$")
@@ -78,7 +78,7 @@ public class AdvantageDemoContactUs {
 
 	@Then("^User see the notification$")
 	public void user_see_the_notification() throws Throwable {
-		Thread.sleep(7000); // Wait to see the result
+		Thread.sleep(5000); // Wait to see the result
 		driver.close(); // Close the driver
 		driver.quit(); // Quit Browser
 	}
@@ -96,14 +96,13 @@ public class AdvantageDemoContactUs {
 			e.printStackTrace(); //It helps to trace the exception as I said at the beginning.
 			System.out.println("Check your Browser's Driver Update");
 		}
-		Thread.sleep(5000);
 	}
 
 	@When("^User click contact button$")
 	public void user_click_contact_button() throws Throwable {
 		AdvantageDemoPOM ContactUsForm = new AdvantageDemoPOM(driver); //Object Created to get Web Elements from Page Object Model
 		ContactUsForm.ContactUs().click(); //Click on the contact us button
-		WebDriverWait wait = new WebDriverWait(driver,20); // Explicit wait is a soft wait to fix synchronizing issue.
+		Thread.sleep(5000); // Wait to see the result
 	}
 
 	@When("^User should type \"([^\"]*)\" address$")
